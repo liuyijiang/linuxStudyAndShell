@@ -1,0 +1,139 @@
+######################################################
+    linux shell study  《book - 轻松学用 linux shell》
+#######################################################
+####
+注意  使用//标注是重要部分
+####
+####
+shell 数组
+####
+
+
+
+0 删除原始vi 下载安装最新vi
+vi{
+  :w 保存不退
+  
+   复制 在一般模式下 光标选择行 yy (number 几行) 到想要地点 p  
+  
+  
+  
+}
+1 linux 是区别大小写的！
+2 一些保留字
+  {case elif let clear else read continue if then echo for in while exit break} 
+  
+###########################shell demo
+1 shell 1  《3.2.1》
+#!/bin/bash
+clear
+echo "title"
+echo "your name?"
+read name  //等待输入 并将输入放入name 变量
+echo $name  //使用 name $是用变量
+
+
+##############################shell demo
+变量
+局部变量： 又程序员建立，供程序员设计的程序使用
+环境变量：又程序员或他人建立，都可以使用
+
+2 shell 2 《4.2.2》
+delcare num1 num2 //
+export key1 key2 key3//使用 定义变量 后面可以带多个
+let num1=1000// 给变量赋值 注意 1 let只能用来赋值数字  2 变量=值 之间不能有空格 
+key1="ssss"//字符串赋值直接加等号
+key3=$key1 //变量之间也可以赋值
+let num3=$num2 与 num3=$num2相同
+
+echo $num3>>test.txt //将变量值保存在一个文件中 echo $xx>>文件
+
+
+#######################################shell demo
+运算符  数学运算符 + - * / %
+declare num1 num3
+export num2
+let num1=10;
+let num2=101
+let num3="$num1 + $num2"//关键点  数学计算的时候得到运算结果，需要将结果赋值给变量才能执行运算，否则返回字符串 
+                         //所有数学运算符直接必须有空格   所有赋值符没有空格
+
+
+逻辑运算 ！ && ||  (-eq等于      -ne不等于     -gt大于      -ge大于或等于    -lt小于    -le小于或等于 =)
+declare num1
+let num1=10
+test $num1 -eq 10 // test 比较
+echo "$?" //$？ 返回第一个值
+
+#######################################shell demo
+控制流程
+1 if
+
+read num
+if [ $num -eq 10 ] //注意 if 用[]括号 两边都要有空格 [ $num = 10 ]
+  then // if 要执行的内容
+  xxxxxxxxx
+  xxxxxxx //这里面可以包含多个语句
+  elif [ $num = 10 ]
+  then
+  xxxxx
+  else 
+  xxxxxxxx
+fi // if的结束符号
+
+2 case    
+read num
+case $num in // 使用case的格式
+1)
+  xxxxxxxxx
+  ;;
+2)
+  xxxxxxxx
+  ;;
+*)
+  xxxxxxxx //没有匹配的时候  
+esac //结束的时候结束语                        
+
+
+##########################################shell demo
+循环
+1 while 循环
+while [ $key != "q" ] //
+  do   //循环体
+  xxxxxxx
+  xxxxxxx
+  read ss
+  key=$ss
+ done //完成循环  {注意要设置退出循环的条件}
+ 
+ 2 for in 循环
+for fs in Mary jon sue//注意  (Mary jon sue)类似一个数组  fs代表一个实例
+do 
+ echo "hello： " $fs
+done
+
+
+
+#############################################shell demo
+子程序
+
+1 函数 {}
+function showme// showme 是函数名字
+{
+   echo $# //所有参数
+   echo $1 //第一个参数
+   echo $2 //第二个参数
+   return //函数返回值    $?
+}
+showme “sada” "dsada"
+
+2子程序
+
+
+
+
+
+
+
+
+
