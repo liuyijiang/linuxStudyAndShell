@@ -13,4 +13,7 @@ http://askubuntu.com/questions/25098/how-do-i-install-dig
 wc命令统计文件中的行数，字数，字节数
 wc -c（byte数） -m（char数） -l（行数） -w(字数) 可以和ls 结合统计文件数量
 
+############
+一些常用的环境变量
+USER UID SHELL HOME PWD
 
