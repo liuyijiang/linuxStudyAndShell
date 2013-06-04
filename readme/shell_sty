@@ -1,0 +1,14 @@
+##############################
+学习 《LINUX SHELL 脚本攻略》
+1 获得字符串长度 ${#var}
+dome 
+var="xxx33"
+length=${#var}
+
+2 UID=0 超级用户
+
+3 shell算数两种方式
+  num1=1
+  num2=3
+  let m=mun1+num2
+  m=$[ mun1 + num2 ] 或者 m=$[ $num1 + $num2 ]
