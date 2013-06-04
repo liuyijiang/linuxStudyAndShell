@@ -17,3 +17,8 @@ wc -c（byte数） -m（char数） -l（行数） -w(字数) 可以和ls 结合�
 一些常用的环境变量
 USER UID SHELL HOME PWD
 
+##############
+tee 命令 
+echo "xxx" | tee -a xx.txt 向xx.txt文件尾插入xxx
+
+#############
