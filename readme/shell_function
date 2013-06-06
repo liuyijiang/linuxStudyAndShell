@@ -1,0 +1,14 @@
+shell 函数学习篇 function
+函数返回值得使用(只能返回整数)
+function test（）{
+  return “hello world”
+}
+test
+var=$?
+返回字符串  可以在外层定义一个变量赋值 
+declare var
+test2(){
+  var="ssss"
+}
+test2
+echo $var
