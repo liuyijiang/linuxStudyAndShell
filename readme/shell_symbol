@@ -23,6 +23,7 @@ CDPATH=.:~:/home:/home/web:/var:/usr/local
 ·倒引号 (backticks)
 在前面的单双引号，括住的是字串，但如果该字串是一列命令列，会怎样？答案是不会执行。要处理这种情况，我们得用倒单引号来做。
 demo var=`ls -l | awk '{print$1}'`
+demo 子shell 两种第一种：`ls -l` 第二种:$(ls -l)
 
 
 , 逗点 (comma，标点中的逗号)
