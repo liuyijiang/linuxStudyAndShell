@@ -1,0 +1,25 @@
+shell 符号总结篇
+# 注解
+
+; 分号 (Command separator)
+在 shell 中，担任\"连续指令\"功能的符号就是\"分号\"。譬如以下的例子：cd ~/backup ; mkdir startup ;cp ~/.* startup/. 
+;; 连续分号 (Terminator)
+专用在 case 的选项，担任 Terminator 的角色。
+case \"$fop\" inhelp) echo \"Usage: Command -help -version filename\";;version) echo \"version 0.1\" ;;esac
+
+
+. 逗号 (dot,就是“点”)
+在 shell 中，使用者应该都清楚，一个 dot 代表当前目录，两个 dot 代表上层目录。
+CDPATH=.:~:/home:/home/web:/var:/usr/local
+在上行 CDPATH 的设定中，等号后的 dot 代表的就是当前目录的意思。
+如果档案名称以 dot 开头，该档案就属特殊档案，用 ls 指令必须加上 -a 选项才会显示。除此之外，在 regularexpression 中，一个 dot 代表匹配一个字元。 
+
+‘’单引号 (single quote)
+被单引号用括住的内容，将被视为单一字串。在引号内的代表变数的$符号，没有作用，也就是说，他被视为一般符号处理，防止任何变量替换。 
+
+“”双引号 (double quote)
+被双引号用括住的内容，将被视为单一字串。它防止通配符扩展，但允许变量扩展。这点与单引数的处理方式不同。
+
+·倒引号 (backticks)
+在前面的单双引号，括住的是字串，但如果该字串是一列命令列，会怎样？答案是不会执行。要处理这种情况，我们得用倒单引号来做。
+demo var=`ls -l | awk '{print$1}'`
