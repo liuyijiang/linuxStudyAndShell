@@ -35,3 +35,11 @@ tput setb 1~7 设置背景颜色1到7是颜色
 stty -echo 禁止输入显示
 
 #############
+read
+read -n 2 输入2个字符结束
+read -p "iput: " 带提示输入
+read -s 不显示输入值
+read -t 2 两秒内的值
+read -d “：” 界定符：之前的值
+
+
