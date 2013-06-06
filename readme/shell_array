@@ -1,0 +1,14 @@
+shell数组篇
+1 shell 中数组的定义
+var=(1 2 3 4 5 )
+var[0]=1
+var[1]=2
+
+2使用数组
+2.1 echo ${var[0]}
+  index=2
+  echo ${var[$index]}
+2.2所有值
+  echo ${var[*]}
+2.3 数组长度
+  echo ${#var[*]}
